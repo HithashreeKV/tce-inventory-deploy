@@ -10,15 +10,24 @@ import logRoutes from './routes/logs.routes.js';
 
 const app = express();
 
+// const corsOptions = {
+//   origin: [
+//     'http://localhost:3000',
+//     'http://127.0.0.1:3000',
+//     process.env.FRONTEND_URL || 'http://localhost:3000'
+//   ],
+//   credentials: true,
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+// };
+
 const corsOptions = {
   origin: [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    process.env.FRONTEND_URL || 'http://localhost:3000'
+    'https://tce-inventory-deploy.vercel.app'
   ],
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
 app.use(cors(corsOptions));
